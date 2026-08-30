@@ -380,6 +380,16 @@ h1 em {
     color: var(--blue);
 }
 
+.sec-title + .sec-hint {
+    margin-top: -1.5rem;
+}
+
+.sec-hint {
+    font-size: 13px;
+    color: var(--ink3);
+    margin-bottom: 2rem;
+}
+
 /* ── COMPÉTENCES ── */
 .comp-grid {
     display: grid;
@@ -403,6 +413,22 @@ h1 em {
 
 .comp-item:hover {
     background: var(--paper3);
+}
+
+/* Blocs du référentiel : cliquables pour filtrer les réalisations */
+.comp-grid--filterable .comp-item {
+    cursor: pointer;
+    outline: none;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.comp-grid--filterable .comp-item:focus-visible {
+    box-shadow: inset 0 0 0 2px var(--ink3);
+}
+
+.comp-grid--filterable .comp-item.active {
+    background: var(--paper3);
+    box-shadow: inset 3px 0 0 var(--active-color, var(--ink3));
 }
 
 .ci-top {
@@ -636,6 +662,59 @@ h1 em {
     color: var(--ink2);
     line-height: 1.6;
     margin-top: 0.35rem;
+}
+
+/* ── FILTRE PAR COMPÉTENCE ── */
+.skill-filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    background: var(--paper2);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 2rem;
+    font-size: 13px;
+    color: var(--ink2);
+}
+
+.skill-filter-bar strong {
+    color: var(--ink);
+}
+
+.skill-filter-clear {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink2);
+    background: var(--paper3);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+}
+
+.skill-filter-clear:hover {
+    color: var(--ink);
+    border-color: var(--ink3);
+}
+
+.skill-filter-empty {
+    font-size: 13px;
+    color: var(--ink3);
+    margin-bottom: 2rem;
+}
+
+.proj-item.is-hidden {
+    display: none;
+}
+
+.proj-group.is-hidden {
+    display: none;
 }
 
 /* ── GROUPES DE PROJETS (école / entreprise) ── */

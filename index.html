@@ -255,9 +255,10 @@
   <section id="referentiel" class="sec">
     <div class="sec-label">03 — Référentiel</div>
     <div class="sec-title">Domaines de <span>maîtrise</span></div>
-    <div class="comp-grid">
+    <p class="sec-hint">Cliquez sur une compétence pour voir les réalisations qui s'y rattachent.</p>
+    <div class="comp-grid comp-grid--filterable">
 
-      <div class="comp-item">
+      <div class="comp-item" data-skill="patrimoine" role="button" tabindex="0" aria-pressed="false">
         <div class="ci-top">
           <div class="ci-dot blue"></div><span class="ci-title">Gérer le patrimoine informatique</span>
         </div>
@@ -265,35 +266,35 @@
           supervision de la continuité de service, gestion des sauvegardes et respect des règles d'utilisation</p>
       </div>
 
-      <div class="comp-item">
+      <div class="comp-item" data-skill="incidents" role="button" tabindex="0" aria-pressed="false">
         <div class="ci-top">
           <div class="ci-dot teal"></div><span class="ci-title">Répondre aux incidents et aux demandes d'assistance et d'évolution</span>
         </div>
         <p class="ci-desc">Collecter, suivre et orienter les demandes. Traiter les demandes concernant les services réseau, système, applicatifs.</p>
       </div>
 
-      <div class="comp-item">
+      <div class="comp-item" data-skill="presence" role="button" tabindex="0" aria-pressed="false">
         <div class="ci-top">
           <div class="ci-dot violet"></div><span class="ci-title">Développer la présence en ligne de l'organisation</span>
         </div>
         <p class="ci-desc">Participer à la valorisation de l'image de l'organisation sur les médias numériques. Participer à l'évolution d'un site Web exploitant les données de l'organisation.</p>
       </div>
 
-      <div class="comp-item">
+      <div class="comp-item" data-skill="projet" role="button" tabindex="0" aria-pressed="false">
         <div class="ci-top">
           <div class="ci-dot amber"></div><span class="ci-title">Travailler en mode projet</span>
         </div>
         <p class="ci-desc">Analyser les objectifs et les modalités d'organisation. Planifier les activités et évaluer les indicateurs de suivi d'un projet.</p>
       </div>
 
-      <div class="comp-item">
+      <div class="comp-item" data-skill="service" role="button" tabindex="0" aria-pressed="false">
         <div class="ci-top">
           <div class="ci-dot rose"></div><span class="ci-title">Mettre à disposition des utilisateurs un service informatique</span>
         </div>
         <p class="ci-desc">Réaliser les tests d'intégration et d'acceptation d'un service. Déployer un service et accompagner les utilisateurs dans sa mise en place.</p>
       </div>
 
-      <div class="comp-item">
+      <div class="comp-item" data-skill="developpement" role="button" tabindex="0" aria-pressed="false">
         <div class="ci-top">
           <div class="ci-dot green"></div><span class="ci-title">Organiser son développement professionnel</span>
         </div>
@@ -312,6 +313,12 @@
     <div class="sec-label">04 — Projets</div>
     <div class="sec-title">Réalisations <span>concrètes</span></div>
 
+    <div id="skillFilterBar" class="skill-filter-bar" hidden>
+      <span>Filtré par compétence : <strong id="skillFilterLabel"></strong></span>
+      <button type="button" id="skillFilterClear" class="skill-filter-clear">Réinitialiser ✕</button>
+    </div>
+    <p id="skillFilterEmpty" class="skill-filter-empty" hidden>Aucune réalisation liée à cette compétence pour l'instant.</p>
+
     <div class="proj-group">
       <div class="proj-group-head">
         <span class="proj-group-badge proj-group-badge--school">École</span>
@@ -325,7 +332,7 @@
             <h3>Mission WEB-M2L </h3>
             <p>Création d'un site web pour la Maison des Ligues de Lorraine</p>
             <div class="proj-stack">
-              <span class="proj-badge pb-violet">Développer la présence en ligne</span>
+              <span class="proj-badge pb-violet" data-skill="presence">Développer la présence en ligne</span>
             </div>
           </div>
         </a>
@@ -336,7 +343,7 @@
             <h3>Mise en place d'un outil de gestion de parc (GLPI)</h3>
             <p>Installation, configuration et déploiement d'une solution de gestion informatique pour l'inventaire et le suivi du parc matériel.</p>
             <div class="proj-stack">
-              <span class="proj-badge pb-blue">Gérer le patrimoine</span>
+              <span class="proj-badge pb-blue" data-skill="patrimoine">Gérer le patrimoine informatique</span>
             </div>
           </div>
           <div class="proj-actions">
@@ -350,9 +357,9 @@
             <h3>Mission Datasec</h3>
             <p>Mise en place d'un serveur FTP Filezilla pour centraliser le dépôt de fichiers et sécuriser les transferts.</p>
             <div class="proj-stack">
-              <span class="proj-badge pb-blue">Gérer le patrimoine informatique</span>
-              <span class="proj-badge pb-amber">Travailler en mode projet</span>
-              <span class="proj-badge pb-rose">Mettre à disposition des utilisateurs un service informatique</span>
+              <span class="proj-badge pb-blue" data-skill="patrimoine">Gérer le patrimoine informatique</span>
+              <span class="proj-badge pb-amber" data-skill="projet">Travailler en mode projet</span>
+              <span class="proj-badge pb-rose" data-skill="service">Mettre à disposition des utilisateurs un service informatique</span>
             </div>
           </div>
           <div class="proj-actions">
@@ -366,9 +373,9 @@
             <h3>Mission Velanne</h3>
             <p>Segmentation du réseau avec des VLAN pour isoler les flux et améliorer la sécurité du parc.</p>
             <div class="proj-stack">
-              <span class="proj-badge pb-blue">Gérer le patrimoine informatique</span>
-              <span class="proj-badge pb-amber">Travailler en mode projet</span>
-              <span class="proj-badge pb-rose">Mettre à disposition des utilisateurs un service informatique</span>
+              <span class="proj-badge pb-blue" data-skill="patrimoine">Gérer le patrimoine informatique</span>
+              <span class="proj-badge pb-amber" data-skill="projet">Travailler en mode projet</span>
+              <span class="proj-badge pb-rose" data-skill="service">Mettre à disposition des utilisateurs un service informatique</span>
             </div>
           </div>
           <div class="proj-actions">
@@ -382,9 +389,9 @@
             <h3>Mission Kiwi</h3>
             <p>Déploiement d’un point d’accès et configuration d’un serveur DHCP pour automatiser l’adressage réseau.</p>
             <div class="proj-stack">
-              <span class="proj-badge pb-blue">Gérer le patrimoine informatique</span>
-              <span class="proj-badge pb-amber">Travailler en mode projet</span>
-              <span class="proj-badge pb-rose">Mettre à disposition des utilisateurs un service informatique</span>
+              <span class="proj-badge pb-blue" data-skill="patrimoine">Gérer le patrimoine informatique</span>
+              <span class="proj-badge pb-amber" data-skill="projet">Travailler en mode projet</span>
+              <span class="proj-badge pb-rose" data-skill="service">Mettre à disposition des utilisateurs un service informatique</span>
             </div>
           </div>
           <div class="proj-actions">
@@ -503,6 +510,78 @@
         closeViewer();
       }
     });
+
+    // ── Filtre des réalisations par compétence (référentiel) ──
+    const skillItems = document.querySelectorAll('.comp-grid--filterable .comp-item[data-skill]');
+    const projItems = document.querySelectorAll('#projets .proj-item');
+    const projGroups = document.querySelectorAll('#projets .proj-group');
+    const filterBar = document.getElementById('skillFilterBar');
+    const filterLabel = document.getElementById('skillFilterLabel');
+    const filterClear = document.getElementById('skillFilterClear');
+    const filterEmpty = document.getElementById('skillFilterEmpty');
+    let activeSkill = null;
+
+    function applySkillFilter(skill, options) {
+      const shouldScroll = options && options.scroll;
+      activeSkill = skill;
+
+      skillItems.forEach(item => {
+        const isActive = skill && item.dataset.skill === skill;
+        item.classList.toggle('active', isActive);
+        item.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        if (isActive) {
+          const dot = item.querySelector('.ci-dot');
+          const colorName = dot ? [...dot.classList].find(c => c !== 'ci-dot') : null;
+          item.style.setProperty('--active-color', colorName ? `var(--${colorName})` : 'var(--ink3)');
+        } else {
+          item.style.removeProperty('--active-color');
+        }
+      });
+
+      let visibleCount = 0;
+      projGroups.forEach(group => {
+        let groupHasVisible = false;
+        group.querySelectorAll('.proj-item').forEach(proj => {
+          const badges = proj.querySelectorAll('.proj-badge[data-skill]');
+          const matches = !skill || [...badges].some(b => b.dataset.skill === skill);
+          proj.classList.toggle('is-hidden', !matches);
+          if (matches) {
+            groupHasVisible = true;
+            visibleCount++;
+          }
+        });
+        group.classList.toggle('is-hidden', !groupHasVisible);
+      });
+
+      if (skill) {
+        const activeItem = document.querySelector(`.comp-grid--filterable .comp-item[data-skill="${skill}"]`);
+        filterLabel.textContent = activeItem ? activeItem.querySelector('.ci-title').textContent : '';
+        filterBar.hidden = false;
+        filterEmpty.hidden = visibleCount !== 0;
+      } else {
+        filterBar.hidden = true;
+        filterEmpty.hidden = true;
+      }
+
+      if (shouldScroll) {
+        document.getElementById('projets').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    skillItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const skill = item.dataset.skill;
+        applySkillFilter(activeSkill === skill ? null : skill, { scroll: activeSkill !== skill });
+      });
+      item.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          item.click();
+        }
+      });
+    });
+
+    filterClear.addEventListener('click', () => applySkillFilter(null));
   </script>
 
 </body>
