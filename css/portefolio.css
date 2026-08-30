@@ -68,9 +68,6 @@ body {
     background: var(--paper);
     color: var(--ink);
     line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 /* ── NAV ── */
@@ -150,11 +147,14 @@ nav {
 }
 
 /* ── HERO ──
-   flex: 1 sur un body en colonne : le hero occupe toute la hauteur
-   restante sous la nav, donc toute la page à l'ouverture. */
+   Occupe (au moins) toute la hauteur de l'écran : il faut scroller
+   pour voir la suite. 100vh en repli, 100dvh (tient compte de la barre
+   d'adresse mobile) quand le navigateur le supporte. */
 #hero {
-    flex: 1 0 auto;
+    box-sizing: border-box;
     width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
     padding: 4rem 2.5rem;
     max-width: 1100px;
     margin: 0 auto;
