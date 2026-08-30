@@ -5,6 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio BTS SIO SISR</title>
+  <script>
+    // Applique le thème choisi avant le premier rendu (évite le flash)
+    (function () {
+      try {
+        var stored = localStorage.getItem('theme');
+        if (stored === 'light' || stored === 'dark') {
+          document.documentElement.setAttribute('data-theme', stored);
+        }
+      } catch (e) {}
+    })();
+  </script>
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Playfair+Display:wght@400;700&display=swap"
     rel="stylesheet">
@@ -20,11 +31,17 @@
   <nav>
     <div class="nav-brand">Portfolio <span>SISR</span></div>
     <ul class="nav-links">
-      <li><a href="#comp">Compétences</a></li>
+      <li><a href="#profil">Profil</a></li>
+      <li><a href="#referentiel">Référentiel</a></li>
       <li><a href="#projets">Projets</a></li>
       <li><a href="#certifications">Certifications</a></li>
     </ul>
-    <div class="nav-pill">BTS SIO · SISR</div>
+    <div class="nav-right">
+      <div class="nav-pill">BTS SIO · SISR</div>
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Activer le thème sombre" aria-pressed="false">
+        <i class="ti ti-moon" aria-hidden="true"></i>
+      </button>
+    </div>
   </nav>
 
 
@@ -83,12 +100,128 @@
 
 
   <!-- ═══════════════════════════════════════════
-     COMPÉTENCES — modifier titres, descriptions, tags
+     PROFIL — compétences techniques, formation, expérience pro
+     (source : CV de Miriam)
+════════════════════════════════════════════ -->
+  <section id="profil" class="sec">
+    <div class="sec-label">01 — Profil</div>
+    <div class="sec-title">Compétences, <span>formation</span> & expérience</div>
+
+    <div class="profil-block">
+      <h3 class="sub-heading">Compétences techniques</h3>
+      <div class="comp-grid comp-grid-2col">
+
+        <div class="comp-item">
+          <div class="ci-top">
+            <div class="ci-dot blue"></div><span class="ci-title">Système</span>
+          </div>
+          <div class="ci-tags">
+            <span class="ci-tag">Architecture matérielle</span>
+            <span class="ci-tag">Windows & Linux (Ubuntu)</span>
+            <span class="ci-tag">Sauvegarde de données</span>
+          </div>
+        </div>
+
+        <div class="comp-item">
+          <div class="ci-top">
+            <div class="ci-dot teal"></div><span class="ci-title">Réseau</span>
+          </div>
+          <div class="ci-tags">
+            <span class="ci-tag">Wireshark</span>
+            <span class="ci-tag">Adressage IPv4</span>
+            <span class="ci-tag">Matériel Cisco</span>
+          </div>
+        </div>
+
+        <div class="comp-item">
+          <div class="ci-top">
+            <div class="ci-dot violet"></div><span class="ci-title">Supervision & outils</span>
+          </div>
+          <div class="ci-tags">
+            <span class="ci-tag">Identification des menaces</span>
+            <span class="ci-tag">VirtualBox</span>
+            <span class="ci-tag">VMware</span>
+          </div>
+        </div>
+
+        <div class="comp-item">
+          <div class="ci-top">
+            <div class="ci-dot blue"></div><span class="ci-title">Langues</span>
+          </div>
+          <div class="ci-tags">
+            <span class="ci-tag">Italien — langue maternelle</span>
+            <span class="ci-tag">Français — bilingue</span>
+            <span class="ci-tag">Anglais — B1</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="profil-block">
+      <h3 class="sub-heading">Formation</h3>
+      <div class="proj-list">
+
+        <div class="proj-item">
+          <div class="proj-num">2025</div>
+          <div class="proj-body">
+            <h3>BTS Services Informatiques aux Organisations — option SISR</h3>
+            <p>Institut Limayrac</p>
+          </div>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-num">2022–2025</div>
+          <div class="proj-body">
+            <h3>Baccalauréat général — spécialité NSI, LLCE, option Mathématiques</h3>
+            <p>Lycée Le Ferradou</p>
+          </div>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-num">2022</div>
+          <div class="proj-body">
+            <h3>Brevet des collèges</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="profil-block">
+      <h3 class="sub-heading">Expérience professionnelle</h3>
+      <div class="proj-list">
+
+        <div class="proj-item">
+          <div class="proj-num">2023</div>
+          <div class="proj-body">
+            <h3>Stage d'observation — SAFRAN</h3>
+            <p>Découverte du fonctionnement d'une entreprise industrielle, visite des ateliers industriels, observation des techniciens en maintenance et des équipes.</p>
+          </div>
+        </div>
+
+        <div class="proj-item">
+          <div class="proj-num">2022</div>
+          <div class="proj-body">
+            <h3>Stage d'observation — ATR</h3>
+            <p>Découverte du secteur aéronautique, observation des équipes informatiques, rencontre avec le service juridique, découverte du design et de la conception d'avions, visite des ateliers d'assemblage.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+
+  <!-- ═══════════════════════════════════════════
+     RÉFÉRENTIEL — blocs de compétences du BTS SIO SISR
      Couleurs disponibles pour ci-dot : blue / teal / violet
 ════════════════════════════════════════════ -->
-  <section id="comp" style="background: var(--paper2); padding: 5rem 0;">
+  <section id="referentiel" style="background: var(--paper2); padding: 5rem 0;">
     <div style="max-width: 1100px; margin: 0 auto; padding: 0 2.5rem;">
-      <div class="sec-label">01 — Blocs</div>
+      <div class="sec-label">02 — Référentiel</div>
       <div class="sec-title">Domaines de <span>maîtrise</span></div>
       <div class="comp-grid">
 
@@ -145,7 +278,7 @@
      Couleurs badges : pb-blue / pb-teal / pb-violet
 ════════════════════════════════════════════ -->
   <section id="projets" class="sec">
-    <div class="sec-label">02 — Projets</div>
+    <div class="sec-label">03 — Projets</div>
     <div class="sec-title">Réalisations <span>concrètes</span></div>
     <div class="proj-list">
 
@@ -228,7 +361,7 @@
   <div id="projectViewer" class="project-viewer hidden" aria-hidden="true">
     <div class="viewer-backdrop" data-close></div>
     <div class="viewer-card">
-      <button class="viewer-close" type="button" aria-label="Fermer la visionneuse">×</button>
+      <button class="viewer-close" type="button" data-close aria-label="Fermer la visionneuse">×</button>
       <img id="viewerImage" src="" alt="">
       <div id="viewerCaption" class="viewer-caption"></div>
     </div>
@@ -238,7 +371,7 @@
   <!-- Certifications -->
   <section id="certifications" style="background: var(--paper2); padding: 5rem 0;">
     <div style="max-width: 1100px; margin: 0 auto; padding: 0 2.5rem;">
-      <div class="sec-label">03 — Certifications</div>
+      <div class="sec-label">04 — Certifications</div>
       <div class="sec-title">Formations & <span>certifications</span></div>
       <div class="cert-row">
         <div class="cert-chip"><img src="image/cisco.png" alt="cyber" width="50"><i class="ti ti-certificate"></i>
@@ -254,13 +387,41 @@
     <span>© 2026 — RALLO · Portfolio BTS SIO SISR</span>
     <div class="f-links">
       <a href="#hero">Haut</a>
-      <a href="#comp">Compétences</a>
+      <a href="#profil">Profil</a>
       <a href="#projets">Projets</a>
-      <a href="#contact">Contact</a>
+      <a href="#certifications">Certifications</a>
     </div>
   </footer>
 
   <script>
+    // ── Thème clair / sombre ──
+    const themeToggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+
+    function systemPrefersDark() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    function currentTheme() {
+      return root.getAttribute('data-theme') || (systemPrefersDark() ? 'dark' : 'light');
+    }
+
+    function applyToggleState(theme) {
+      const icon = themeToggle.querySelector('i');
+      icon.className = theme === 'dark' ? 'ti ti-sun' : 'ti ti-moon';
+      themeToggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+      themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Activer le thème clair' : 'Activer le thème sombre');
+    }
+
+    applyToggleState(currentTheme());
+
+    themeToggle.addEventListener('click', () => {
+      const next = currentTheme() === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      applyToggleState(next);
+    });
+
     const viewer = document.getElementById('projectViewer');
     const viewerImage = document.getElementById('viewerImage');
     const viewerCaption = document.getElementById('viewerCaption');
