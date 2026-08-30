@@ -445,6 +445,22 @@ h1 em {
     flex-shrink: 0;
 }
 
+/* Logos technos (svg simple-icons inline -> currentColor, discrets et
+   adaptés au thème comme le reste des icônes du site) */
+.tech-logo {
+    width: 12px;
+    height: 12px;
+    fill: var(--ink3);
+    flex-shrink: 0;
+}
+
+.tech-logo-icon {
+    font-size: 13px;
+    color: var(--ink3);
+    line-height: 1;
+    flex-shrink: 0;
+}
+
 .ci-desc {
     font-size: 13px;
     color: var(--ink2);
@@ -551,6 +567,37 @@ h1 em {
     font-weight: 500;
     color: var(--ink);
     line-height: 1.45;
+}
+
+.tl-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.15rem;
+}
+
+.tl-head .tl-title {
+    margin: 0;
+}
+
+/* Logo entreprise : liseré blanc fixe (les logos sont prévus pour un
+   fond clair), quel que soit le thème de la page */
+.company-logo-wrap {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 4px 7px;
+    line-height: 0;
+}
+
+.company-logo {
+    display: block;
+    height: 16px;
+    width: auto;
 }
 
 .tl-sub,

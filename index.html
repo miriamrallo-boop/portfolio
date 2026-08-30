@@ -32,7 +32,8 @@
   <nav>
     <div class="nav-brand">Portfolio <span>SISR</span></div>
     <ul class="nav-links">
-      <li><a href="#profil">Profil</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#parcours">Parcours</a></li>
       <li><a href="#referentiel">Référentiel</a></li>
       <li><a href="#projets">Projets</a></li>
       <li><a href="#certifications">Certifications</a></li>
@@ -101,65 +102,76 @@
 
 
   <!-- ═══════════════════════════════════════════
-     PROFIL — compétences techniques, formation, expérience pro
-     (source : CV de Miriam)
+     COMPÉTENCES TECHNIQUES — logos technos via simple-icons (inline svg,
+     colorées en currentColor) + tabler pour Windows (pas d'icône dans
+     simple-icons). Source : CV de Miriam
 ════════════════════════════════════════════ -->
-  <section id="profil" class="sec">
-    <div class="sec-label">01 — Profil</div>
-    <div class="sec-title">Compétences, <span>formation</span> & expérience</div>
+  <section id="competences" class="sec">
+    <div class="sec-label">01 — Compétences</div>
+    <div class="sec-title">Compétences <span>techniques</span></div>
+    <div class="comp-grid comp-grid-2col">
 
-    <div class="profil-block">
-      <h3 class="sub-heading">Compétences techniques</h3>
-      <div class="comp-grid comp-grid-2col">
-
-        <div class="comp-item">
-          <div class="ci-top">
-            <div class="ci-dot blue"></div><span class="ci-title">Système</span>
-          </div>
-          <div class="ci-tags">
-            <span class="ci-tag">Architecture matérielle</span>
-            <span class="ci-tag">Windows & Linux (Ubuntu)</span>
-            <span class="ci-tag">Sauvegarde de données</span>
-          </div>
+      <div class="comp-item">
+        <div class="ci-top">
+          <div class="ci-dot blue"></div><span class="ci-title">Système</span>
         </div>
-
-        <div class="comp-item">
-          <div class="ci-top">
-            <div class="ci-dot teal"></div><span class="ci-title">Réseau</span>
-          </div>
-          <div class="ci-tags">
-            <span class="ci-tag">Wireshark</span>
-            <span class="ci-tag">Adressage IPv4</span>
-            <span class="ci-tag">Matériel Cisco</span>
-          </div>
+        <div class="ci-tags">
+          <span class="ci-tag">Architecture matérielle</span>
+          <span class="ci-tag"><i class="ti ti-brand-windows tech-logo-icon" aria-hidden="true"></i>Windows</span>
+          <span class="ci-tag"><svg class="tech-logo" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.61.455a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zM12.92.8C8.923.777 5.137 2.941 3.148 6.451a4.5 4.5 0 0 1 .26-.007 4.92 4.92 0 0 1 2.585.737A8.316 8.316 0 0 1 12.688 3.6 4.944 4.944 0 0 1 13.723.834 11.008 11.008 0 0 0 12.92.8zm9.226 4.994a4.915 4.915 0 0 1-1.918 2.246 8.36 8.36 0 0 1-.273 8.303 4.89 4.89 0 0 1 1.632 2.54 11.156 11.156 0 0 0 .559-13.089zM3.41 7.932A3.41 3.41 0 0 0 0 11.342a3.41 3.41 0 0 0 3.41 3.409 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41zm2.027 7.866a4.908 4.908 0 0 1-2.915.358 11.1 11.1 0 0 0 7.991 6.698 11.234 11.234 0 0 0 2.422.249 4.879 4.879 0 0 1-.999-2.85 8.484 8.484 0 0 1-.836-.136 8.304 8.304 0 0 1-5.663-4.32zm11.405.928a3.41 3.41 0 0 0-3.41 3.41 3.41 3.41 0 0 0 3.41 3.41 3.41 3.41 0 0 0 3.41-3.41 3.41 3.41 0 0 0-3.41-3.41z"/></svg>Linux (Ubuntu)</span>
+          <span class="ci-tag">Sauvegarde de données</span>
         </div>
-
-        <div class="comp-item">
-          <div class="ci-top">
-            <div class="ci-dot violet"></div><span class="ci-title">Supervision & outils</span>
-          </div>
-          <div class="ci-tags">
-            <span class="ci-tag">Identification des menaces</span>
-            <span class="ci-tag">VirtualBox</span>
-            <span class="ci-tag">VMware</span>
-          </div>
-        </div>
-
-        <div class="comp-item">
-          <div class="ci-top">
-            <div class="ci-dot blue"></div><span class="ci-title">Langues</span>
-          </div>
-          <div class="ci-tags">
-            <span class="ci-tag"><span class="fi fi-it lang-flag" aria-hidden="true"></span>Italien — langue maternelle</span>
-            <span class="ci-tag"><span class="fi fi-fr lang-flag" aria-hidden="true"></span>Français — bilingue</span>
-            <span class="ci-tag"><span class="fi fi-gb lang-flag" aria-hidden="true"></span>Anglais — B1</span>
-          </div>
-        </div>
-
       </div>
-    </div>
 
-    <div class="profil-block">
+      <div class="comp-item">
+        <div class="ci-top">
+          <div class="ci-dot teal"></div><span class="ci-title">Réseau</span>
+        </div>
+        <div class="ci-tags">
+          <span class="ci-tag"><svg class="tech-logo" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m2.95 0c-1.62 0-2.95 1.32-2.95 2.95v18.1c0 1.63 1.32 2.95 2.95 2.95h18.1c1.62 0 2.95-1.32 2.95-2.95v-18.1c-.00024-1.63-1.32-2.95-2.95-2.95zm0 1.09h18.1c1.04 0 1.85.818 1.85 1.86v14h-5.27c-.335-.796-2.57-6.47.283-10.9a.516.517 0 0 0-.443-.794c-5.24.0827-8.2 3.19-9.74 6.21-1.35 2.64-1.63 4.91-1.69 5.53h-4.95v-14c0-1.04.817-1.86 1.85-1.86zm13.6 5.24c-2.62 5.24.248 11.4.248 11.4a.516.517 0 0 0 .469.301h5.62v3.05c0 1.04-.817 1.86-1.85 1.86h-18.1c-1.04 0-1.85-.818-1.85-1.86v-3.05h5.39a.516.517 0 0 0 .514-.477s.226-2.8 1.66-5.62c1.34-2.62 3.67-5.17 7.91-5.57z"/></svg>Wireshark</span>
+          <span class="ci-tag">Adressage IPv4</span>
+          <span class="ci-tag"><svg class="tech-logo" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.331 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.186 1.186 0 01-.806-.237 1.038 1.038 0 01-.352-.498 1.21 1.21 0 01-.023-.667c.052-.225.178-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.34 2.34 0 00-.903.206c-.287.132-.54.327-.739.571a2.221 2.221 0 00-.04 2.705c.295.378.709.645 1.175.756.491.12 1.006.102 1.487-.052l.082-.023M5.336 18.171V17.06l-.022.01c-.25.121-.522.19-.801.203a1.183 1.183 0 01-.806-.237 1.03 1.03 0 01-.351-.498 1.202 1.202 0 01-.024-.667c.052-.225.177-.426.357-.569.16-.134.355-.218.562-.242a1.85 1.85 0 011.061.198l.024.013v-1.117l-.051-.014a2.862 2.862 0 00-1.011-.132 2.344 2.344 0 00-.903.206 2.08 2.08 0 00-.74.571 2.224 2.224 0 00-.041 2.705 2.11 2.11 0 001.176.756c.491.12 1.005.102 1.487-.052l.083-.023M9.26 17.249l-.004.957.07.012c.22.041.441.069.664.085.195.019.391.022.587.012.187-.014.372-.049.551-.104.21-.06.405-.163.571-.305a1.16 1.16 0 00.333-.478 1.31 1.31 0 00-.007-.96 1.068 1.068 0 00-.298-.414 1.261 1.261 0 00-.438-.255l-.722-.268a.388.388 0 01-.197-.188.245.245 0 01.008-.219.382.382 0 01.154-.142.798.798 0 01.257-.074c.153-.022.308-.021.46.005.18.02.358.051.533.096l.038.008v-.883l-.069-.015a4.749 4.749 0 00-.543-.097 2.844 2.844 0 00-.714-.003c-.3.027-.585.143-.821.33-.16.126-.281.293-.351.484-.104.29-.105.608 0 .899.054.145.14.274.252.381.097.093.207.173.327.236.157.084.324.149.497.195.057.017.114.035.17.054l.085.031.024.01c.084.03.162.078.226.14.045.042.08.094.101.151a.325.325 0 01.001.161.339.339 0 01-.166.198.856.856 0 01-.275.086 2.032 2.032 0 01-.427.021 5.208 5.208 0 01-.557-.074 9.195 9.195 0 01-.287-.067l-.033-.006zm-2.475.995h1.05v-4.167h-1.05v4.167zm12.162-2.936a1.095 1.095 0 011.541.158 1.094 1.094 0 01-.157 1.541l-.017.014a1.096 1.096 0 01-1.367-1.713m-1.525.854a2.193 2.193 0 002.666 2.107 2.139 2.139 0 00.701-3.937 2.207 2.207 0 00-3.367 1.83M22.961 10.728a.52.52 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155M20.117 10.728a.522.522 0 001.041 0V8.139a.521.521 0 00-1.04 0v2.589M17.231 11.771a.521.521 0 001.039 0V6.17a.52.52 0 00-1.039 0v5.601M14.393 10.728a.521.521 0 001.04 0V8.139a.52.52 0 00-1.039 0v2.589M11.494 10.728a.522.522 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155M8.624 10.728a.52.52 0 001.039 0V8.139a.52.52 0 00-1.039 0v2.589M5.737 11.771a.52.52 0 001.039 0V6.17a.52.52 0 00-1.039 0v5.601M2.876 10.728a.522.522 0 001.04 0V8.139a.52.52 0 00-1.039 0v2.589M0 10.728a.521.521 0 001.039 0V9.573a.52.52 0 00-1.039 0v1.155"/></svg>Matériel Cisco</span>
+        </div>
+      </div>
+
+      <div class="comp-item">
+        <div class="ci-top">
+          <div class="ci-dot violet"></div><span class="ci-title">Supervision & outils</span>
+        </div>
+        <div class="ci-tags">
+          <span class="ci-tag">Identification des menaces</span>
+          <span class="ci-tag"><svg class="tech-logo" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 1.758 5.182 20c.129.455.25.691.421.945.063.092.13.179.202.264.173.204.37.378.59.525.243.163.49.286.763.371.324.1.61.137.99.137h4.327l1.918-6.615h6.798v3.699a.11.11 0 0 1-.109.11h-4.88l-.813 2.806h5.654a2.92 2.92 0 0 0 1.95-.725A2.903 2.903 0 0 0 24 19.285v-6.47H12.28l-1.919 6.614H7.937L3.715 4.564h2.922l1.546 5.444H11.1l-2.343-8.25zm15.496 0-2.4 8.25H24v-5.29a2.962 2.962 0 0 0-1.825-2.741 3.044 3.044 0 0 0-1.129-.22zm2.11 2.806h3.476a.11.11 0 0 1 .11.112V7.2h-4.354z"/></svg>VirtualBox</span>
+          <span class="ci-tag"><svg class="tech-logo" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.5 10.1a.505.505 0 00-.197.048.497.497 0 00-.25.68l1.138 2.475c.179.38.38.592.721.592.342 0 .542-.22.72-.592l1.003-2.186a.144.144 0 01.144-.092.16.16 0 01.157.16v2.118a.535.535 0 101.066 0v-1.73a.531.531 0 01.566-.552.52.52 0 01.541.551v1.73a.531.531 0 00.53.593.539.539 0 00.535-.592v-1.73a.531.531 0 01.564-.552.52.52 0 01.543.551v1.73a.531.531 0 00.528.593.535.535 0 00.535-.592v-1.969a1.234 1.234 0 00-1.283-1.23 1.647 1.647 0 00-1.14.486 1.26 1.26 0 00-1.095-.483 1.807 1.807 0 00-1.074.483 1.287 1.287 0 00-.961-.483 1.177 1.177 0 00-1.158.786l-.729 1.716-.933-2.203.011-.004A.505.505 0 00.5 10.1zm18.43.06a.27.27 0 00-.266.274h.002v3.142a.27.27 0 10.535 0v-1.222c0-1.037.571-1.56 1.27-1.643a.266.266 0 00.238-.274.258.258 0 00-.266-.269 1.465 1.465 0 00-1.242.88v-.614a.266.266 0 00-.271-.274zm-6.735.008a.273.273 0 00-.25.217l-.912 2.627-.902-2.62a.28.28 0 00-.274-.22.266.266 0 00-.27.258.493.493 0 00.034.144l1.09 3.037.02-.007a.319.319 0 00.298.242.3.3 0 00.293-.242l.903-2.583.896 2.583a.3.3 0 00.293.242h.018a.319.319 0 00.293-.242l1.097-3.038a.512.512 0 00.033-.144.258.258 0 00-.265-.25.262.262 0 00-.258.209l-.918 2.63-.904-2.626a.285.285 0 00-.278-.217h-.025a.273.273 0 00-.012 0zm10.168.008a1.75 1.75 0 00-1.691 1.851 1.765 1.765 0 001.76 1.858l-.008.013a1.784 1.784 0 001.33-.539.228.228 0 00.082-.17.228.228 0 00-.379-.168 1.435 1.435 0 01-1.018.415 1.237 1.237 0 01-1.24-1.207h2.555a.247.247 0 00.246-.247c0-.945-.593-1.806-1.637-1.806zm-5.744.002a1.571 1.571 0 00-.158.006 2.384 2.384 0 00-1.078.205.22.22 0 00-.143.222.24.24 0 00.235.229.266.266 0 00.095-.024 1.822 1.822 0 01.834-.162c.691 0 1.07.334 1.07.979v.125a3.796 3.796 0 00-1.103-.15c-.892 0-1.52.4-1.52 1.16l-.003-.004c0 .736.671 1.117 1.34 1.117a1.575 1.575 0 001.298-.62v.343a.247.247 0 00.254.25.254.254 0 00.258-.262v-1.983a1.416 1.416 0 00-.379-1.046 1.571 1.571 0 00-1-.385zm5.719.43c.714 0 1.085.565 1.139 1.214h-2.278a1.222 1.222 0 011.139-1.215zm-5.885 1.382a3.75 3.75 0 011.057.153V12.49c0 .57-.539.973-1.2.973-.485 0-.904-.261-.904-.713 0-.467.375-.76 1.047-.76Z"/></svg>VMware</span>
+        </div>
+      </div>
+
+      <div class="comp-item">
+        <div class="ci-top">
+          <div class="ci-dot blue"></div><span class="ci-title">Langues</span>
+        </div>
+        <div class="ci-tags">
+          <span class="ci-tag"><span class="fi fi-it lang-flag" aria-hidden="true"></span>Italien — langue maternelle</span>
+          <span class="ci-tag"><span class="fi fi-fr lang-flag" aria-hidden="true"></span>Français — bilingue</span>
+          <span class="ci-tag"><span class="fi fi-gb lang-flag" aria-hidden="true"></span>Anglais — B1</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+
+  <!-- ═══════════════════════════════════════════
+     PARCOURS — formation & expérience pro, en deux colonnes avec
+     frise chronologique. Logos entreprises en PNG (image/logos/).
+     Source : CV de Miriam
+════════════════════════════════════════════ -->
+  <section id="parcours" style="background: var(--paper2); padding: 5rem 0;">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 0 2.5rem;">
+      <div class="sec-label">02 — Parcours</div>
+      <div class="sec-title">Formation & <span>expérience</span></div>
+
       <div class="timeline-cols">
 
         <div class="timeline-col">
@@ -203,7 +215,10 @@
               <div class="tl-dot teal"></div>
               <div class="tl-card">
                 <div class="tl-year">2023</div>
-                <h4 class="tl-title">Stage d'observation — SAFRAN</h4>
+                <div class="tl-head">
+                  <span class="company-logo-wrap"><img src="./image/logos/safran.png" alt="SAFRAN" class="company-logo"></span>
+                  <h4 class="tl-title">Stage d'observation — SAFRAN</h4>
+                </div>
                 <p class="tl-desc">Découverte du fonctionnement d'une entreprise industrielle, visite des ateliers industriels, observation des techniciens en maintenance et des équipes.</p>
               </div>
             </div>
@@ -212,7 +227,10 @@
               <div class="tl-dot violet"></div>
               <div class="tl-card">
                 <div class="tl-year">2022</div>
-                <h4 class="tl-title">Stage d'observation — ATR</h4>
+                <div class="tl-head">
+                  <span class="company-logo-wrap"><img src="./image/logos/atr.png" alt="ATR" class="company-logo"></span>
+                  <h4 class="tl-title">Stage d'observation — ATR</h4>
+                </div>
                 <p class="tl-desc">Découverte du secteur aéronautique, observation des équipes informatiques, rencontre avec le service juridique, découverte du design et de la conception d'avions, visite des ateliers d'assemblage.</p>
               </div>
             </div>
@@ -224,63 +242,59 @@
     </div>
   </section>
 
-  <hr class="divider">
-
 
   <!-- ═══════════════════════════════════════════
      RÉFÉRENTIEL — blocs de compétences du BTS SIO SISR
      Couleurs disponibles pour ci-dot : blue / teal / violet
 ════════════════════════════════════════════ -->
-  <section id="referentiel" style="background: var(--paper2); padding: 5rem 0;">
-    <div style="max-width: 1100px; margin: 0 auto; padding: 0 2.5rem;">
-      <div class="sec-label">02 — Référentiel</div>
-      <div class="sec-title">Domaines de <span>maîtrise</span></div>
-      <div class="comp-grid">
+  <section id="referentiel" class="sec">
+    <div class="sec-label">03 — Référentiel</div>
+    <div class="sec-title">Domaines de <span>maîtrise</span></div>
+    <div class="comp-grid">
 
-        <div class="comp-item">
-          <div class="ci-top">
-            <div class="ci-dot blue"></div><span class="ci-title">Gérer le patrimoine informatique</span>
-          </div>
-          <p class="ci-desc">Inventaire et gestion des ressources numériques, contrôle des habilitations et des accès,
-            supervision de la continuité de service, gestion des sauvegardes et respect des règles d'utilisation</p>
+      <div class="comp-item">
+        <div class="ci-top">
+          <div class="ci-dot blue"></div><span class="ci-title">Gérer le patrimoine informatique</span>
         </div>
-
-        <div class="comp-item">
-          <div class="ci-top">
-            <div class="ci-dot teal"></div><span class="ci-title">Répondre aux incidents et aux demandes d'assistance et d'évolution</span>
-          </div>
-          <p class="ci-desc">Collecter, suivre et orienter les demandes. Traiter les demandes concernant les services réseau, système, applicatifs.</p>
-        </div>
-
-        <div class="comp-item">
-          <div class="ci-top">
-            <div class="ci-dot violet"></div><span class="ci-title">Développer la présence en ligne de l'organisation</span>
-          </div>
-          <p class="ci-desc">Participer à la valorisation de l'image de l'organisation sur les médias numériques. Participer à l'évolution d'un site Web exploitant les données de l'organisation.</p>
-        </div>
-
-        <div class="comp-item">
-          <div class="ci-top">
-            <div class="ci-dot blue"></div><span class="ci-title">Travailler en mode projet</span>
-          </div>
-          <p class="ci-desc">Analyser les objectifs et les modalités d'organisation. Planifier les activités et évaluer les indicateurs de suivi d'un projet.</p>
-        </div>
-
-        <div class="comp-item">
-          <div class="ci-top">
-            <div class="ci-dot teal"></div><span class="ci-title">Mettre à disposition des utilisateurs un service informatique</span>
-          </div>
-          <p class="ci-desc">Réaliser les tests d'intégration et d'acceptation d'un service. Déployer un service et accompagner les utilisateurs dans sa mise en place.</p>
-        </div>
-
-        <div class="comp-item">
-          <div class="ci-top">
-            <div class="ci-dot violet"></div><span class="ci-title">Organiser son développement professionnel</span>
-          </div>
-          <p class="ci-desc">Mettre en place un environnement d'apprentissage personnel. Mettre en œuvre des outils et stratégies de veille informationnelle. Gérer son identité professionnelle.</p>
-        </div>
-
+        <p class="ci-desc">Inventaire et gestion des ressources numériques, contrôle des habilitations et des accès,
+          supervision de la continuité de service, gestion des sauvegardes et respect des règles d'utilisation</p>
       </div>
+
+      <div class="comp-item">
+        <div class="ci-top">
+          <div class="ci-dot teal"></div><span class="ci-title">Répondre aux incidents et aux demandes d'assistance et d'évolution</span>
+        </div>
+        <p class="ci-desc">Collecter, suivre et orienter les demandes. Traiter les demandes concernant les services réseau, système, applicatifs.</p>
+      </div>
+
+      <div class="comp-item">
+        <div class="ci-top">
+          <div class="ci-dot violet"></div><span class="ci-title">Développer la présence en ligne de l'organisation</span>
+        </div>
+        <p class="ci-desc">Participer à la valorisation de l'image de l'organisation sur les médias numériques. Participer à l'évolution d'un site Web exploitant les données de l'organisation.</p>
+      </div>
+
+      <div class="comp-item">
+        <div class="ci-top">
+          <div class="ci-dot blue"></div><span class="ci-title">Travailler en mode projet</span>
+        </div>
+        <p class="ci-desc">Analyser les objectifs et les modalités d'organisation. Planifier les activités et évaluer les indicateurs de suivi d'un projet.</p>
+      </div>
+
+      <div class="comp-item">
+        <div class="ci-top">
+          <div class="ci-dot teal"></div><span class="ci-title">Mettre à disposition des utilisateurs un service informatique</span>
+        </div>
+        <p class="ci-desc">Réaliser les tests d'intégration et d'acceptation d'un service. Déployer un service et accompagner les utilisateurs dans sa mise en place.</p>
+      </div>
+
+      <div class="comp-item">
+        <div class="ci-top">
+          <div class="ci-dot violet"></div><span class="ci-title">Organiser son développement professionnel</span>
+        </div>
+        <p class="ci-desc">Mettre en place un environnement d'apprentissage personnel. Mettre en œuvre des outils et stratégies de veille informationnelle. Gérer son identité professionnelle.</p>
+      </div>
+
     </div>
   </section>
 
@@ -290,7 +304,7 @@
      Couleurs badges : pb-blue / pb-teal / pb-violet
 ════════════════════════════════════════════ -->
   <section id="projets" class="sec">
-    <div class="sec-label">03 — Projets</div>
+    <div class="sec-label">04 — Projets</div>
     <div class="sec-title">Réalisations <span>concrètes</span></div>
     <div class="proj-list">
 
@@ -383,7 +397,7 @@
   <!-- Certifications -->
   <section id="certifications" style="background: var(--paper2); padding: 5rem 0;">
     <div style="max-width: 1100px; margin: 0 auto; padding: 0 2.5rem;">
-      <div class="sec-label">04 — Certifications</div>
+      <div class="sec-label">05 — Certifications</div>
       <div class="sec-title">Formations & <span>certifications</span></div>
       <div class="cert-row">
         <div class="cert-chip"><img src="image/cisco.png" alt="cyber" width="50"><i class="ti ti-certificate"></i>
@@ -399,9 +413,9 @@
     <span>© 2026 — RALLO · Portfolio BTS SIO SISR</span>
     <div class="f-links">
       <a href="#hero">Haut</a>
-      <a href="#profil">Profil</a>
+      <a href="#competences">Compétences</a>
+      <a href="#parcours">Parcours</a>
       <a href="#projets">Projets</a>
-      <a href="#certifications">Certifications</a>
     </div>
   </footer>
 
