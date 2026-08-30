@@ -865,6 +865,21 @@ h1 em {
     color: var(--violet);
 }
 
+.pb-amber {
+    background: var(--amber-l);
+    color: var(--amber);
+}
+
+.pb-rose {
+    background: var(--rose-l);
+    color: var(--rose);
+}
+
+.pb-green {
+    background: var(--green-l);
+    color: var(--green);
+}
+
 .proj-label {
     font-size: 11px;
     padding: 4px 10px;
