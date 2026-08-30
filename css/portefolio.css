@@ -19,6 +19,12 @@
     --teal-l: #ccfbf1;
     --violet: #7c3aed;
     --violet-l: #ede9fe;
+    --amber: #d97706;
+    --amber-l: #fef3c7;
+    --rose: #e11d48;
+    --rose-l: #ffe4e6;
+    --green: #16a34a;
+    --green-l: #dcfce7;
     --line: rgba(26, 26, 46, 0.1);
     --sans: 'DM Sans', sans-serif;
     --serif: 'Playfair Display', serif;
@@ -38,6 +44,12 @@
         --teal-l: #0f3a36;
         --violet: #a78bfa;
         --violet-l: #2e1f5e;
+        --amber: #fbbf24;
+        --amber-l: #4a3410;
+        --rose: #fb7185;
+        --rose-l: #4c1220;
+        --green: #4ade80;
+        --green-l: #0f3d22;
         --line: rgba(232, 230, 240, 0.1);
     }
 }
@@ -56,6 +68,12 @@
     --teal-l: #0f3a36;
     --violet: #a78bfa;
     --violet-l: #2e1f5e;
+    --amber: #fbbf24;
+    --amber-l: #4a3410;
+    --rose: #fb7185;
+    --rose-l: #4c1220;
+    --green: #4ade80;
+    --green-l: #0f3d22;
     --line: rgba(232, 230, 240, 0.1);
 }
 
@@ -413,6 +431,18 @@ h1 em {
     background: var(--violet);
 }
 
+.ci-dot.amber {
+    background: var(--amber);
+}
+
+.ci-dot.rose {
+    background: var(--rose);
+}
+
+.ci-dot.green {
+    background: var(--green);
+}
+
 .ci-title {
     font-size: 14px;
     font-weight: 500;
@@ -606,6 +636,58 @@ h1 em {
     color: var(--ink2);
     line-height: 1.6;
     margin-top: 0.35rem;
+}
+
+/* ── GROUPES DE PROJETS (école / entreprise) ── */
+.proj-group {
+    margin-bottom: 3rem;
+}
+
+.proj-group:last-child {
+    margin-bottom: 0;
+}
+
+.proj-group-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.25rem;
+}
+
+.proj-group-head .sub-heading {
+    margin-bottom: 0;
+}
+
+.proj-group-badge {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 4px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.proj-group-badge--school {
+    background: var(--violet-l);
+    color: var(--violet);
+}
+
+.proj-group-badge--company {
+    background: var(--teal-l);
+    color: var(--teal);
+}
+
+.proj-item--empty {
+    cursor: default;
+    grid-template-columns: 1fr;
+}
+
+.proj-item--empty:hover {
+    background: var(--paper);
+}
+
+.proj-item--empty h3 {
+    color: var(--ink2);
 }
 
 /* ── PROJETS ── */
@@ -860,6 +942,14 @@ h1 em {
     flex-wrap: wrap;
     gap: 12px;
     justify-content: center;
+}
+
+.cert-sub-heading {
+    margin-top: 2rem;
+}
+
+.cert-row--inline {
+    justify-content: flex-start;
 }
 
 .cert-chip {
