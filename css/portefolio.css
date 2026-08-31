@@ -843,6 +843,43 @@ h1 em {
     color: var(--ink2);
 }
 
+.viewer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding: 0.5rem 0.25rem 0.25rem;
+}
+
+.viewer-content h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--ink);
+}
+
+.viewer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.viewer-section strong {
+    color: var(--ink);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.viewer-section p,
+.viewer-section ul {
+    margin: 0;
+    color: var(--ink2);
+    line-height: 1.6;
+}
+
+.viewer-section ul {
+    padding-left: 1.2rem;
+}
+
 .proj-badge {
     font-size: 11px;
     padding: 3px 10px;
