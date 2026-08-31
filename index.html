@@ -84,7 +84,7 @@
         <div class="hc-icon hc-teal"><i class="ti ti-folder-open"></i></div>
         <div>
           <div class="hc-label">Projets</div>
-          <div class="hc-val">Mission WEB-M2L, Glpi, Mission Datasec, Mission Velanne, Mission Kiwi </div>
+          <div class="hc-val">Mission WEB-M2L, Glpi, Mission Datasec, Mission Velanne, Mission Kiwi, Mission 1, Mission 2, Mission 3 </div>
         </div>
       </div>
       <!-- Carte 3 -->
@@ -466,10 +466,14 @@
 
   <div id="projectViewer" class="project-viewer hidden" aria-hidden="true">
     <div class="viewer-backdrop" data-close></div>
-    <div class="viewer-card">
+    <div class="viewer-card" id="viewerCard">
       <button class="viewer-close" type="button" data-close aria-label="Fermer la visionneuse">×</button>
-      <img id="viewerImage" src="" alt="">
-      <div id="viewerCaption" class="viewer-caption"></div>
+      <div class="viewer-card-inner">
+        <div class="viewer-card-front">
+          <img id="viewerImage" src="" alt="">
+          <div id="viewerCaption" class="viewer-caption"></div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -517,84 +521,120 @@
     });
 
     const viewer = document.getElementById('projectViewer');
+    const viewerCard = document.getElementById('viewerCard');
     const viewerImage = document.getElementById('viewerImage');
     const viewerCaption = document.getElementById('viewerCaption');
     const buttons = document.querySelectorAll('.proj-eye');
 
     const missionDetails = {
-      'Mission 1': `
-        <div class="viewer-content">
-          <div class="viewer-section">
-            <strong>Contexte</strong>
-            <p>IFORM a besoin de pouvoir déployer rapidement des postes Windows identiques plutôt que de tout reconfigurer à chaque fois.</p>
-          </div>
-          <div class="viewer-section">
-            <strong>Objectif</strong>
-            <p>Créer une image Windows réutilisable, en testant deux méthodes : en local avec Hyper-V, et directement sur Azure.</p>
-          </div>
-          <div class="viewer-section">
-            <strong>Ce que j'ai fait</strong>
-            <ul>
-              <li>Créé une VM sur Hyper-V et fait un Sysprep pour généraliser l'image avant de la capturer</li>
-              <li>Créé une deuxième VM directement sur Azure, cette fois sans passer par Sysprep</li>
-              <li>Comparé les deux modes de capture d'Azure Compute Gallery (Generalized et Specialized) pour voir dans quels cas utiliser l'un ou l'autre</li>
-            </ul>
-          </div>
-          <div class="viewer-section">
-            <strong>Compétences mobilisées</strong>
-            <p>Virtualisation, Hyper-V, Azure Compute Gallery</p>
-          </div>
-        </div>
-      `,
-      'Mission 2': `
-        <div class="viewer-content">
-          <div class="viewer-section">
-            <strong>Contexte</strong>
-            <p>Une VM Windows exposée directement sur Internet avec une IP publique, c'est un risque de sécurité inutile.</p>
-          </div>
-          <div class="viewer-section">
-            <strong>Objectif</strong>
-            <p>Utiliser le serveur Guacamole comme passerelle grâce au peering, pour supprimer l'exposition publique tout en gardant un accès distant fonctionnel.</p>
-          </div>
-          <div class="viewer-section">
-            <strong>Ce que j'ai fait</strong>
-            <ul>
-              <li>Supprimé l'IP publique de la VM Windows</li>
-              <li>Mis en place un VNet peering entre le VNet de la VM et celui du serveur Guacamole</li>
-              <li>Configuré une connexion RDP</li>
-            </ul>
-          </div>
-          <div class="viewer-section">
-            <strong>Compétences mobilisées</strong>
-            <p>VNet Azure (peering), sécurité des accès distants, Apache Guacamole, RDP</p>
-          </div>
-        </div>
-      `,
-      'Mission 3': `
-        <div class="viewer-content">
-          <div class="viewer-section">
-            <strong>Objectif</strong>
-            <p>Déployer une VM Ubuntu sans l'exposer publiquement, avec un accès distant sécurisé.</p>
-          </div>
-          <div class="viewer-section">
-            <strong>Ce que j'ai fait</strong>
-            <ul>
-              <li>Déployé une VM Ubuntu Server sur Azure, sans IP publique</li>
-              <li>Peeré son VNet avec celui de Guacamole</li>
-              <li>Publié l'accès SSH via Guacamole</li>
-            </ul>
-          </div>
-          <div class="viewer-section">
-            <strong>Compétences mobilisées</strong>
-            <p>Administration Linux, VNet Azure, SSH</p>
-          </div>
-        </div>
-      `
+      'Mission 1': {
+        title: 'Mission 1',
+        intro: 'Créer une image Windows réutilisable, en testant deux méthodes : en local avec Hyper-V, et directement sur Azure.',
+        sections: [
+          { label: 'Contexte', text: 'IFORM a besoin de pouvoir déployer rapidement des postes Windows identiques plutôt que de tout reconfigurer à chaque fois.' },
+          { label: 'Objectif', text: 'Créer une image Windows réutilisable, en testant deux méthodes : en local avec Hyper-V, et directement sur Azure.' },
+          { label: 'Ce que j\'ai fait', text: 'Création et comparaison de deux méthodes de capture d’image Windows afin d’aboutir à un déploiement plus rapide et plus fiable.' },
+          { label: 'Compétences mobilisées', text: 'Virtualisation, Hyper-V, Azure Compute Gallery' }
+        ],
+        gallery: [
+          { image: './image/mission1-step1.svg', text: 'Créé une VM sur Hyper-V et fait un Sysprep pour généraliser l\'image avant de la capturer' },
+          { image: './image/mission1-step2.svg', text: 'Créé une deuxième VM directement sur Azure, cette fois sans passer par Sysprep' },
+          { image: './image/mission1-step3.svg', text: 'Réalisation galerie' },
+          { image: './image/mission1-step4.svg', text: 'Création de la définition' },
+          { image: './image/mission1-step5.svg', text: 'Déploiement' },
+          { image: './image/mission1-step5.svg', text: 'Utilisation sur une nouvelle VM' }
+        ]
+      },
+      'Mission 2': {
+        title: 'Mission 2',
+        intro: 'Utiliser le serveur Guacamole comme passerelle grâce au peering, pour supprimer l’exposition publique tout en gardant un accès distant fonctionnel.',
+        sections: [
+          { label: 'Contexte', text: 'Une VM Windows exposée directement sur Internet avec une IP publique, c\'est un risque de sécurité inutile.' },
+          { label: 'Objectif', text: 'Utiliser le serveur Guacamole comme passerelle grâce au peering, pour supprimer l\'exposition publique tout en gardant un accès distant fonctionnel.' },
+          { label: 'Ce que j\'ai fait', text: 'Suppression de l\'IP publique, mise en place du peering VNet et configuration de l\'accès RDP.' },
+          { label: 'Compétences mobilisées', text: 'VNet Azure (peering), sécurité des accès distants, Apache Guacamole, RDP' }
+        ],
+        gallery: [
+          { image: './image/mission2.svg', text: 'Architecture finale sécurisée via Guacamole' }
+        ]
+      },
+      'Mission 3': {
+        title: 'Mission 3',
+        intro: 'Déployer une VM Ubuntu sans l’exposer publiquement, avec un accès distant sécurisé.',
+        sections: [
+          { label: 'Objectif', text: 'Déployer une VM Ubuntu sans l\'exposer publiquement, avec un accès distant sécurisé.' },
+          { label: 'Ce que j\'ai fait', text: 'Déploiement d\'une VM Ubuntu sans IP publique, peering VNet et accès SSH via Guacamole.' },
+          { label: 'Compétences mobilisées', text: 'Administration Linux, VNet Azure, SSH' }
+        ],
+        gallery: [
+          { image: './image/mission3.svg', text: 'Accès distant sécurisé via Guacamole' }
+        ]
+      }
     };
+
+    function renderMissionCard(title) {
+      const details = missionDetails[title];
+      if (!details) {
+        viewerCaption.innerHTML = `<div class="viewer-content"><div class="viewer-section"><strong>${title}</strong></div></div>`;
+        return;
+      }
+
+      const galleryHtml = details.gallery.map((step, index) => `
+        <div class="viewer-thumb ${index === 0 ? 'is-active' : ''}">
+          <img src="${step.image}" alt="${step.text}">
+          <span>${step.text}</span>
+        </div>
+      `).join('');
+
+      const sectionsHtml = details.sections.map(section => `
+        <div class="viewer-section">
+          <strong>${section.label}</strong>
+          <p>${section.text}</p>
+        </div>
+      `).join('');
+
+      viewerCaption.innerHTML = `
+        <div class="viewer-content">
+          <div class="viewer-header">
+            <h3>${details.title}</h3>
+            <p>${details.intro}</p>
+          </div>
+          <div class="viewer-body">
+            <div class="viewer-gallery-column">
+              <div class="viewer-main-image">
+                <img src="${details.gallery[0].image}" alt="${details.gallery[0].text}">
+              </div>
+              <div class="viewer-thumbs">
+                ${galleryHtml}
+              </div>
+            </div>
+            <div class="viewer-info-column">
+              ${sectionsHtml}
+            </div>
+          </div>
+        </div>
+      `;
+
+      const activeThumbs = viewerCaption.querySelectorAll('.viewer-thumb');
+      activeThumbs.forEach((thumb, index) => {
+        thumb.addEventListener('click', () => {
+          activeThumbs.forEach(el => el.classList.remove('is-active'));
+          thumb.classList.add('is-active');
+          const image = details.gallery[index].image;
+          const text = details.gallery[index].text;
+          const mainImage = viewerCaption.querySelector('.viewer-main-image img');
+          if (mainImage) {
+            mainImage.src = image;
+            mainImage.alt = text;
+          }
+        });
+      });
+    }
 
     function closeViewer() {
       viewer.classList.add('hidden');
       viewer.setAttribute('aria-hidden', 'true');
+      viewerCard.classList.remove('is-flipped');
       viewerImage.src = '';
       viewerImage.alt = '';
       viewerCaption.innerHTML = '';
@@ -606,12 +646,13 @@
         event.stopPropagation();
         const imageSrc = button.dataset.image;
         const imageTitle = button.dataset.title || 'Aperçu';
-        const details = missionDetails[imageTitle];
 
+        viewerCard.classList.add('is-flipped');
         viewerImage.src = imageSrc || '';
         viewerImage.alt = imageTitle;
         viewerImage.style.display = imageSrc ? 'block' : 'none';
-        viewerCaption.innerHTML = details || `<div class="viewer-content"><div class="viewer-section"><strong>${imageTitle}</strong></div></div>`;
+
+        renderMissionCard(imageTitle);
         viewer.classList.remove('hidden');
         viewer.setAttribute('aria-hidden', 'false');
       });
