@@ -427,9 +427,6 @@
               <span class="proj-badge pb-blue">Gérer le patrimoine informatique</span>
             </div>
           </div>
-          <div class="proj-actions">
-            <button class="proj-eye" type="button" data-image="./image/mission_1.png" data-title="Mission 1"><i class="ti ti-eye"></i></button>
-          </div>
         </div>
 
         <div class="proj-item">
@@ -441,9 +438,6 @@
               <span class="proj-badge pb-blue">Gérer le patrimoine informatique</span>
             </div>
           </div>
-          <div class="proj-actions">
-            <button class="proj-eye" type="button" data-image="./image/mission_2.png" data-title="Mission 2"><i class="ti ti-eye"></i></button>
-          </div>
         </div>
 
         <div class="proj-item">
@@ -454,9 +448,6 @@
             <div class="proj-stack">
               <span class="proj-badge pb-blue">Gérer le patrimoine informatique</span>
             </div>
-          </div>
-          <div class="proj-actions">
-            <button class="proj-eye" type="button" data-image="./image/mission_3.png" data-title="Mission 3"><i class="ti ti-eye"></i></button>
           </div>
         </div>
 
@@ -527,49 +518,6 @@
     const buttons = document.querySelectorAll('.proj-eye');
 
     const missionDetails = {
-      'Mission 1': {
-        title: 'Mission 1',
-        intro: 'Créer une image Windows réutilisable, en testant deux méthodes : en local avec Hyper-V, et directement sur Azure.',
-        sections: [
-          { label: 'Contexte', text: 'IFORM a besoin de pouvoir déployer rapidement des postes Windows identiques plutôt que de tout reconfigurer à chaque fois.' },
-          { label: 'Objectif', text: 'Créer une image Windows réutilisable, en testant deux méthodes : en local avec Hyper-V, et directement sur Azure.' },
-          { label: 'Ce que j\'ai fait', text: 'Création et comparaison de deux méthodes de capture d’image Windows afin d’aboutir à un déploiement plus rapide et plus fiable.' },
-          { label: 'Compétences mobilisées', text: 'Virtualisation, Hyper-V, Azure Compute Gallery' }
-        ],
-        gallery: [
-          { image: './image/mission1-step1.svg', text: 'Créé une VM sur Hyper-V et fait un Sysprep pour généraliser l\'image avant de la capturer' },
-          { image: './image/mission1-step2.svg', text: 'Créé une deuxième VM directement sur Azure, cette fois sans passer par Sysprep' },
-          { image: './image/mission1-step3.svg', text: 'Réalisation galerie' },
-          { image: './image/mission1-step4.svg', text: 'Création de la définition' },
-          { image: './image/mission1-step5.svg', text: 'Déploiement' },
-          { image: './image/mission1-step5.svg', text: 'Utilisation sur une nouvelle VM' }
-        ]
-      },
-      'Mission 2': {
-        title: 'Mission 2',
-        intro: 'Utiliser le serveur Guacamole comme passerelle grâce au peering, pour supprimer l’exposition publique tout en gardant un accès distant fonctionnel.',
-        sections: [
-          { label: 'Contexte', text: 'Une VM Windows exposée directement sur Internet avec une IP publique, c\'est un risque de sécurité inutile.' },
-          { label: 'Objectif', text: 'Utiliser le serveur Guacamole comme passerelle grâce au peering, pour supprimer l\'exposition publique tout en gardant un accès distant fonctionnel.' },
-          { label: 'Ce que j\'ai fait', text: 'Suppression de l\'IP publique, mise en place du peering VNet et configuration de l\'accès RDP.' },
-          { label: 'Compétences mobilisées', text: 'VNet Azure (peering), sécurité des accès distants, Apache Guacamole, RDP' }
-        ],
-        gallery: [
-          { image: './image/mission2.svg', text: 'Architecture finale sécurisée via Guacamole' }
-        ]
-      },
-      'Mission 3': {
-        title: 'Mission 3',
-        intro: 'Déployer une VM Ubuntu sans l’exposer publiquement, avec un accès distant sécurisé.',
-        sections: [
-          { label: 'Objectif', text: 'Déployer une VM Ubuntu sans l\'exposer publiquement, avec un accès distant sécurisé.' },
-          { label: 'Ce que j\'ai fait', text: 'Déploiement d\'une VM Ubuntu sans IP publique, peering VNet et accès SSH via Guacamole.' },
-          { label: 'Compétences mobilisées', text: 'Administration Linux, VNet Azure, SSH' }
-        ],
-        gallery: [
-          { image: './image/mission3.svg', text: 'Accès distant sécurisé via Guacamole' }
-        ]
-      }
     };
 
     function renderMissionCard(title) {
