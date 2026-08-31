@@ -441,6 +441,9 @@
               <span class="proj-badge pb-blue">Gérer le patrimoine informatique</span>
             </div>
           </div>
+          <div class="proj-actions">
+            <button class="proj-eye" type="button" data-title="Mission 2" aria-label="Voir les détails de la mission 2"><i class="ti ti-eye"></i></button>
+          </div>
         </div>
 
         <div class="proj-item">
@@ -451,6 +454,9 @@
             <div class="proj-stack">
               <span class="proj-badge pb-blue">Gérer le patrimoine informatique</span>
             </div>
+          </div>
+          <div class="proj-actions">
+            <button class="proj-eye" type="button" data-title="Mission 3" aria-label="Voir les détails de la mission 3"><i class="ti ti-eye"></i></button>
           </div>
         </div>
 
@@ -530,6 +536,29 @@
           { image: './image/definition.png', text: 'Création de la définition de l’image dans la galerie.' },
           { image: './image/d%C3%A9ploi.png', text: 'Déploiement de l’image sur une nouvelle machine virtuelle.' },
           { image: './image/utilisationnouvVM.png', text: 'Utilisation de l’image sur une nouvelle machine virtuelle.' }
+        ]
+      },
+      'Mission 2': {
+        title: 'Mission 2',
+        intro: 'Mise en place d’un peering entre la VM et le serveur Guacamole pour sécuriser les connexions.',
+        gallery: [
+          { image: './image/mission2/redeployerlavmsansadresseipPUBLIQUE.png', text: 'Redéploiement de la VM sans adresse IP publique.' },
+          { image: './image/mission2/apr%C3%A8avoirfaitlepeeringentreGUACetVMpng.png', text: 'Après avoir fait le peering entre Guacamole et la VM.' },
+          { image: './image/mission2/connexionRDP.png', text: 'Connexion RDP à la machine virtuelle.' },
+          { image: './image/mission2/connexionVIAGUACAMOLE.png', text: 'Connexion via Guacamole.' },
+        ]
+      },
+      'Mission 3': {
+        title: 'Mission 3',
+        intro: 'Création d’une VM Ubuntu Linux et accès sécurisé via Guacamole et SSH.',
+        gallery: [
+          { image: './image/mission%203/creationVMUBUNTUlinux.png', text: 'Création de la VM Ubuntu Linux.' },
+          { image: './image/mission%203/redploilavmsansadresseIPpublique.png', text: 'Redéploiement de la VM sans adresse IP publique.' },
+          { image: './image/mission%203/peeringGUACetVM.png', text: 'Peering entre Guacamole et la VM.' },
+          { image: './image/mission%203/connexionSSH.png', text: 'Connexion SSH.' },
+          { image: './image/mission%203/acc%C3%A8sviaGUAC.png', text: 'Accès via Guacamole.' },
+          
+          
         ]
       }
     };
