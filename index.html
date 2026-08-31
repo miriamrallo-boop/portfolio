@@ -521,11 +521,83 @@
     const viewerCaption = document.getElementById('viewerCaption');
     const buttons = document.querySelectorAll('.proj-eye');
 
+    const missionDetails = {
+      'Mission 1': `
+        <div class="viewer-content">
+          <div class="viewer-section">
+            <strong>Contexte</strong>
+            <p>IFORM a besoin de pouvoir déployer rapidement des postes Windows identiques plutôt que de tout reconfigurer à chaque fois.</p>
+          </div>
+          <div class="viewer-section">
+            <strong>Objectif</strong>
+            <p>Créer une image Windows réutilisable, en testant deux méthodes : en local avec Hyper-V, et directement sur Azure.</p>
+          </div>
+          <div class="viewer-section">
+            <strong>Ce que j'ai fait</strong>
+            <ul>
+              <li>Créé une VM sur Hyper-V et fait un Sysprep pour généraliser l'image avant de la capturer</li>
+              <li>Créé une deuxième VM directement sur Azure, cette fois sans passer par Sysprep</li>
+              <li>Comparé les deux modes de capture d'Azure Compute Gallery (Generalized et Specialized) pour voir dans quels cas utiliser l'un ou l'autre</li>
+            </ul>
+          </div>
+          <div class="viewer-section">
+            <strong>Compétences mobilisées</strong>
+            <p>Virtualisation, Hyper-V, Azure Compute Gallery</p>
+          </div>
+        </div>
+      `,
+      'Mission 2': `
+        <div class="viewer-content">
+          <div class="viewer-section">
+            <strong>Contexte</strong>
+            <p>Une VM Windows exposée directement sur Internet avec une IP publique, c'est un risque de sécurité inutile.</p>
+          </div>
+          <div class="viewer-section">
+            <strong>Objectif</strong>
+            <p>Utiliser le serveur Guacamole comme passerelle grâce au peering, pour supprimer l'exposition publique tout en gardant un accès distant fonctionnel.</p>
+          </div>
+          <div class="viewer-section">
+            <strong>Ce que j'ai fait</strong>
+            <ul>
+              <li>Supprimé l'IP publique de la VM Windows</li>
+              <li>Mis en place un VNet peering entre le VNet de la VM et celui du serveur Guacamole</li>
+              <li>Configuré une connexion RDP</li>
+            </ul>
+          </div>
+          <div class="viewer-section">
+            <strong>Compétences mobilisées</strong>
+            <p>VNet Azure (peering), sécurité des accès distants, Apache Guacamole, RDP</p>
+          </div>
+        </div>
+      `,
+      'Mission 3': `
+        <div class="viewer-content">
+          <div class="viewer-section">
+            <strong>Objectif</strong>
+            <p>Déployer une VM Ubuntu sans l'exposer publiquement, avec un accès distant sécurisé.</p>
+          </div>
+          <div class="viewer-section">
+            <strong>Ce que j'ai fait</strong>
+            <ul>
+              <li>Déployé une VM Ubuntu Server sur Azure, sans IP publique</li>
+              <li>Peeré son VNet avec celui de Guacamole</li>
+              <li>Publié l'accès SSH via Guacamole</li>
+            </ul>
+          </div>
+          <div class="viewer-section">
+            <strong>Compétences mobilisées</strong>
+            <p>Administration Linux, VNet Azure, SSH</p>
+          </div>
+        </div>
+      `
+    };
+
     function closeViewer() {
       viewer.classList.add('hidden');
       viewer.setAttribute('aria-hidden', 'true');
       viewerImage.src = '';
-      viewerCaption.textContent = '';
+      viewerImage.alt = '';
+      viewerCaption.innerHTML = '';
     }
 
     buttons.forEach(button => {
@@ -534,10 +606,12 @@
         event.stopPropagation();
         const imageSrc = button.dataset.image;
         const imageTitle = button.dataset.title || 'Aperçu';
-        if (!imageSrc) return;
-        viewerImage.src = imageSrc;
+        const details = missionDetails[imageTitle];
+
+        viewerImage.src = imageSrc || '';
         viewerImage.alt = imageTitle;
-        viewerCaption.textContent = imageTitle;
+        viewerImage.style.display = imageSrc ? 'block' : 'none';
+        viewerCaption.innerHTML = details || `<div class="viewer-content"><div class="viewer-section"><strong>${imageTitle}</strong></div></div>`;
         viewer.classList.remove('hidden');
         viewer.setAttribute('aria-hidden', 'false');
       });
