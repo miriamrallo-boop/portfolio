@@ -796,9 +796,9 @@ h1 em {
 .viewer-card {
     position: relative;
     z-index: 1;
-    max-width: 92vw;
-    width: min(820px, 100%);
-    max-height: 92vh;
+    max-width: 96vw;
+    width: min(1220px, 100%);
+    max-height: 95vh;
     background: var(--paper);
     border-radius: 20px;
     overflow: hidden;
@@ -902,14 +902,74 @@ h1 em {
 
 .viewer-thumb img {
     width: 100%;
-    height: 230px;
+    height: 300px;
     object-fit: contain;
     background: #f5f8fc;
+    cursor: zoom-in;
+    transition: filter 0.2s ease;
+}
+
+.viewer-thumb img:hover {
+    filter: brightness(0.92);
 }
 
 .viewer-thumb span {
     display: block;
     padding: 0.8rem 1rem 1rem;
+}
+
+.image-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 11000;
+    display: grid;
+    place-items: center;
+    padding: 3rem;
+    background: rgba(10, 12, 24, 0.9);
+}
+
+.image-lightbox.hidden {
+    display: none;
+}
+
+.image-lightbox img {
+    display: block;
+    max-width: min(95vw, 1400px);
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+}
+
+.image-lightbox-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font-size: 1.7rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    .viewer-caption {
+        padding: 1rem 0.8rem 1.25rem;
+    }
+
+    .viewer-thumb img {
+        height: 220px;
+    }
+
+    .image-lightbox {
+        padding: 1rem;
+    }
 }
 
 .proj-badge {

@@ -477,6 +477,11 @@
     </div>
   </div>
 
+  <div id="imageLightbox" class="image-lightbox hidden" aria-hidden="true">
+    <button class="image-lightbox-close" type="button" aria-label="Fermer l’image agrandie">×</button>
+    <img id="lightboxImage" src="" alt="">
+  </div>
+
 
   <!-- ═══════════════════════════════════════════
      FOOTER — modifier nom et année
@@ -524,6 +529,9 @@
     const viewerCard = document.getElementById('viewerCard');
     const viewerImage = document.getElementById('viewerImage');
     const viewerCaption = document.getElementById('viewerCaption');
+    const imageLightbox = document.getElementById('imageLightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const imageLightboxClose = imageLightbox.querySelector('.image-lightbox-close');
     const buttons = document.querySelectorAll('.proj-eye');
 
     const missionDetails = {
@@ -589,20 +597,23 @@
         </div>
       `;
 
-      const activeThumbs = viewerCaption.querySelectorAll('.viewer-thumb');
-      activeThumbs.forEach((thumb, index) => {
-        thumb.addEventListener('click', () => {
-          activeThumbs.forEach(el => el.classList.remove('is-active'));
-          thumb.classList.add('is-active');
-          const image = details.gallery[index].image;
-          const text = details.gallery[index].text;
-          const mainImage = viewerCaption.querySelector('.viewer-main-image img');
-          if (mainImage) {
-            mainImage.src = image;
-            mainImage.alt = text;
-          }
+      const galleryImages = viewerCaption.querySelectorAll('.viewer-thumb img');
+      galleryImages.forEach(image => {
+        image.addEventListener('click', event => {
+          event.stopPropagation();
+          lightboxImage.src = image.src;
+          lightboxImage.alt = image.alt;
+          imageLightbox.classList.remove('hidden');
+          imageLightbox.setAttribute('aria-hidden', 'false');
         });
       });
+    }
+
+    function closeImageLightbox() {
+      imageLightbox.classList.add('hidden');
+      imageLightbox.setAttribute('aria-hidden', 'true');
+      lightboxImage.src = '';
+      lightboxImage.alt = '';
     }
 
     function closeViewer() {
@@ -612,6 +623,7 @@
       viewerImage.src = '';
       viewerImage.alt = '';
       viewerCaption.innerHTML = '';
+      closeImageLightbox();
     }
 
     buttons.forEach(button => {
@@ -638,9 +650,18 @@
       }
     });
 
+    imageLightbox.addEventListener('click', event => {
+      if (event.target === imageLightbox || event.target === imageLightboxClose) {
+        closeImageLightbox();
+      }
+    });
+
     document.addEventListener('keydown', event => {
       if (event.key === 'Escape' && !viewer.classList.contains('hidden')) {
         closeViewer();
+      }
+      if (event.key === 'Escape' && !imageLightbox.classList.contains('hidden')) {
+        closeImageLightbox();
       }
     });
   </script>
