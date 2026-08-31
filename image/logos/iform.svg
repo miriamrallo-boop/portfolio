@@ -1,0 +1,8 @@
+<svg width="160" height="80" viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="80" rx="16" fill="#0F172A"/>
+  <rect x="12" y="12" width="56" height="56" rx="12" fill="#22C55E"/>
+  <path d="M30 26H48.5C53.7467 26 58 30.2533 58 35.5V35.5C58 40.7467 53.7467 45 48.5 45H30V26Z" fill="#F8FAFC"/>
+  <path d="M27 49H48.5C53.7467 49 58 53.2533 58 58.5V58.5C58 63.7467 53.7467 68 48.5 68H27V49Z" fill="#E2E8F0"/>
+  <text x="82" y="38" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">iForm</text>
+  <text x="82" y="58" fill="#A7F3D0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="600">IT &amp; Cloud</text>
+</svg>
